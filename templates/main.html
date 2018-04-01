@@ -1,0 +1,66 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+    <body>
+    <div class="container">
+        <br>
+        <form method="POST" action="{{ url_for('homepage') }}">
+            {{ form.csrf_token }}
+
+
+                <div class="form-group">
+                    <div class="col-sm-7">   {{ form.capacity.label }}
+
+                    </div>
+                    <div class="col-sm-5"> {{ form.capacity }}
+
+                        <small id="capacityHelp" class="form-text text-muted">Minimum capacity of battery cell
+                        </small>
+
+                    </div>
+                </div>
+
+
+
+            <div class="form-group">
+                <div class="col-sm-7">
+                    {{ form.current.label }}
+                </div>
+
+                <div class="col-sm-5">
+                    {{ form.current }}
+                    <small id="currentHelp" class="form-text text-muted">Output current of charger</small>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-sm-7">
+                    {{ form.efficiency.label }}
+                </div>
+
+
+                <div class="col-sm-5">
+                    {{ form.efficiency }}
+                    <small id="efficiencyHelp" class="form-text text-muted">20% efficiency loss is expected as normal
+                        amount
+                    </small>
+                </div>
+            </div>
+
+            <input type="submit" value="Submit">
+        </form>
+        <div>
+            Charge time in hours: {{ result }}
+        </div>
+    </div>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+
+    </body>
+
+    </html>
+
+{% endblock %}
