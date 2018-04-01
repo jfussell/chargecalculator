@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>NiMh Battery Charge Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/custom.css') }}" rel="stylesheet">
+</head>
+
+<header>
+
+    <div class="container-fluid">
+        <ul class="nav navbar-nav navbar-right">
+            <div style="margin-right: 10px; margin-left: 15px; margin-top: 5px; margin-bottom: 5px;"
+                 class="container-fluid">
+                <h5> NiMh Battery Charge Calculator <a href="/faq">FAQ</a>
+                </h5>
+            </div>
+        </ul>
+
+    </div>
+</header>
+
+{% block body %} {% endblock %}
